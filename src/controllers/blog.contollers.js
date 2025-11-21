@@ -1,5 +1,6 @@
 // all logic will be in the controller
-const Blog = require("../models/blog.model");
+// const Blog = require("../models/blog.model");
+import Blog from "../models/blog.model";
 
 // get all blogs
 const getAllBlogs = async (req, res) => {
