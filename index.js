@@ -16,10 +16,10 @@ app.use(cors({
   origin:"*"
 }));
 
-
+import router from "./src/routes/blog.routes.js";
 // routes
-const blogRoutes = require("./src/routes/blog.routes");
-app.use('/blogs', blogRoutes);
+// const blogRoutes = require("./src/routes/blog.routes.js");
+app.use('/blogs', router);
 
 
 

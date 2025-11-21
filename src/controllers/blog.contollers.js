@@ -1,9 +1,9 @@
 // all logic will be in the controller
 // const Blog = require("../models/blog.model");
-import Blog from "../models/blog.model";
+import Blog from "../models/blog.model.js";
 
 // get all blogs
-const getAllBlogs = async (req, res) => {
+export const getAllBlogs = async (req, res) => {
   try {
     const blogs = await Blog.find().sort({ createdAt: -1 });
     console.log(blogs);
@@ -20,7 +20,7 @@ const getAllBlogs = async (req, res) => {
   }
 }
 // get blog by id
-const getBlogById = async(req, res) => {
+export const getBlogById = async(req, res) => {
     try {
         const {id} = req.params;
         const blog = await Blog.findById(id);
@@ -45,7 +45,7 @@ const getBlogById = async(req, res) => {
 }
 
 // create a blog
-const createBlog = async (req, res) => {
+export const createBlog = async (req, res) => {
   try {
     const newBlog = new Blog({
       ...req.body,
@@ -65,7 +65,7 @@ const createBlog = async (req, res) => {
   }
 }
 // delete a blog
-const deleteBlog = async (req, res) => {
+export const deleteBlog = async (req, res) => {
     try {
         const {id} = req.params;
         const deletedBlog = await Blog.findByIdAndDelete(id);
@@ -91,7 +91,7 @@ const deleteBlog = async (req, res) => {
 }
 
 // update a blog
-const updateBlog = async(req, res) => {
+export const updateBlog = async(req, res) => {
     try {
         const {id} = req.params;
         const updatedBlog = await Blog.findByIdAndUpdate(id, req.body, {
@@ -119,10 +119,11 @@ const updateBlog = async(req, res) => {
 }
 
 
-module.exports = {
-    getAllBlogs,
-    getBlogById,
-    createBlog,
-    deleteBlog,
-    updateBlog
-}
+// module.exports = {
+//     getAllBlogs,
+//     getBlogById,
+//     // createBlog,
+//     deleteBlog,
+//     updateBlog
+// }
+
