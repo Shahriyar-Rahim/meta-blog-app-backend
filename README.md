@@ -1,4 +1,3 @@
-Got it. Here’s a **README.md** markdown suited to your **meta-blog-app-backend** (Node.js, Express, MongoDB + Mongoose).
 
 ````markdown
 # meta-blog-app-backend
